@@ -1,4 +1,4 @@
 **Hi!** 
 
 
-This is a basic streamlit app demonstrating its easy of use and flexibility.
+This is a basic streamlit app demonstrating its ease of use and flexibility.
