@@ -1,23 +1,13 @@
-# Draw a title and some text to the app:
-'''
-# This is the document title
+import streamlit as st
+from menu import menu_with_redirect
 
-This is some _markdown_.
-'''
+# Redirect to app.py if not logged in, otherwise show the navigation menu
+menu_with_redirect()
 
-import pandas as pd
-df = pd.DataFrame({'col1': [1,2,3]})
-df  # 👈 Draw the dataframe
+# Verify the user's role
+if st.session_state.role not in ["super-admin"]:
+    st.warning("You do not have permission to view this page.")
+    st.stop()
 
-x = 10
-'x', x  # 👈 Draw the string 'x' and then the value of x
-
-# Also works with most supported chart types
-import matplotlib.pyplot as plt
-import numpy as np
-
-arr = np.random.normal(1, 1, size=100)
-fig, ax = plt.subplots()
-ax.hist(arr, bins=20)
-
-fig  # 👈 Draw a Matplotlib chart
+st.title("This page is available to super-admins")
+st.markdown(f"You are currently logged with the role of {st.session_state.role}.")
