@@ -14,13 +14,6 @@ def set_role():
     # Assign the value of `_role` to the `role` attribute in the `session_state` object
     st.session_state.role = st.session_state._role
 
-# Selectbox to choose role
-st.selectbox(
-    "Select your role:",
-    [None, "user", "admin", "super-admin"],
-    key="_role",
-    on_change=set_role,
-)
 
 # Render the dynamic menu
 def menu():
@@ -28,6 +21,15 @@ def menu():
         st.write(f"Welcome, {st.session_state.role}!")
     else:
         st.write("Please select your role.")
+
+
+# Selectbox to choose role
+st.selectbox(
+    "Select your role:",
+    [None, "user", "admin", "super-admin"],
+    key="_role",
+    on_change=set_role,
+)
 
 # Add a link to fragments.py
 container = st.container(border=True)
