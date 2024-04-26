@@ -15,4 +15,5 @@ Link to the website: https://mikheilkvizhinadze2001-streamlit-app-app-f2gk1t.str
 Link to the tutorial : https://docs.streamlit.io/get-started
 
 thanks :)
+
 :innocent: 
