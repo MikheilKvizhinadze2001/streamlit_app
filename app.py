@@ -23,13 +23,7 @@ def menu():
         st.write("Please select your role.")
 
 
-# Selectbox to choose role
-st.selectbox(
-    "Select your role:",
-    [None, "user", "admin", "super-admin"],
-    key="_role",
-    on_change=set_role,
-)
+
 
 # Add a link to fragments.py
 container = st.container(border=True)
@@ -39,4 +33,12 @@ container.write("""
                  demo to show the use of fragments in Streamlit.
                  """)
 container.page_link("pages/fragments.py", label="Go to fragments")
+
+# Selectbox to choose role
+st.selectbox(
+    "Select your role:",
+    [None, "user", "admin", "super-admin"],
+    key="_role",
+    on_change=set_role,
+)
 menu()
